@@ -2,6 +2,9 @@
     position: relative;
     height: 60vh;
     background-image: url('../images/bg-pattern.svg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
     z-index: 0;
     padding: 15vw 6vw 0 6vw;
     text-align: center;
