@@ -346,6 +346,7 @@ input[type="range"]::-ms-fill-lower {
 
 .card__body div:last-child > span:not(span:last-child) {
   margin-right: 3vw;
+  margin-right: 11.25px;
 }
 
 .card__body div:last-child > span:last-child {
