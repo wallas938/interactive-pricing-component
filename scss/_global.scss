@@ -1,0 +1,43 @@
+@import "typo";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-size: 15px;
+    font-family: $manrope;
+    position: relative;
+    background-color: $very-pale-blue;
+
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+input[type="button"],
+input[type="submit"],
+button {
+    cursor: pointer;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+}

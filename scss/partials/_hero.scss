@@ -1,0 +1,40 @@
+.hero {
+    position: relative;
+    height: 60vh;
+    background-image: url('../images/bg-pattern.svg');
+    z-index: 0;
+    padding: 15vw 6vw 0 6vw;
+    text-align: center;
+
+    &__pattern-circles {
+        background-image: url("../images/pattern-circles.svg");
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: center;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 56vw;
+    }
+
+    &__text {
+        z-index: 5;
+        position: relative;
+
+        h1 {
+            font-size: 5.2vw;
+            margin-bottom: 3vw;
+            color: $dark-desaturated-blue;
+            font-weight: 800;
+        }
+
+        p {
+            font-size: 3.5vw;
+            width: 57%;
+            margin: 0 auto;
+            color: $grayish-blue;
+        }
+    }
+}

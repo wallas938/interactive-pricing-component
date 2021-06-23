@@ -1,0 +1,161 @@
+.card {
+    position: absolute;
+    text-align: center;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 87%;
+    height: 66vh;
+    bottom: -63vw;
+    background-color: $white;
+    border-radius: 10px;
+    box-shadow: -1px 4px 4px 1px lightgray;
+
+    &__body {
+        height: 55%;
+        display: grid;
+        padding: 4.5vw 6.5vw;
+        color: $grayish-blue;
+        margin-bottom: 2vw;
+        grid-template-rows: .7fr .3fr .9fr .5fr;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-areas:
+            "page-v   page-v   page-v   page-v"
+            "slider   slider   slider   slider"
+            "bill     bill     bill     bill"
+            "body-cta body-cta body-cta body-cta";
+
+        p:first-child {
+            grid-area: page-v;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-transform: uppercase;
+            font-size: 3.3vw;
+            letter-spacing: 1.5px;
+            font-weight: 600;
+        }
+
+        div.slider {
+            grid-area: slider;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            input {
+                width: 100%;
+            }
+        }
+
+        p:nth-of-type(2) {
+            grid-area: bill;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            span:first-child {
+                font-size: 8vw;
+                color: black;
+                font-weight: 800;
+                margin-right: 2.5vw;
+            }
+
+            span:last-child {
+                font-size: 3.8vw;
+            }
+        }
+
+        div:last-child {
+            grid-area: body-cta;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            >span:not(span.toggle) {
+                font-size: 3.2vw;
+            }
+
+            span.toggle {
+                position: relative;
+                width: 14%;
+                height: 45%;
+                background-color: $lighter-grayish-blue;
+                border-radius: 30px;
+
+                &__circle {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: 10%;
+                    background-color: $white;
+                    width: 35%;
+                    height: 70%;
+                    border-radius: 100%;
+                }
+            }
+
+            >span:not(span:last-child) {
+                margin-right: 2vw;
+            }
+
+            >span:last-child {
+                display: inline-block;
+                color: $light-red;
+                background-color: hsl(16, 79%, 94%);
+                padding: .3vw 2vw;
+                font-size: 2.5vw;
+                font-weight: 800;
+                border-radius: 30px;
+            }
+        }
+    }
+
+    &__footer {
+        padding: 4.5vw 6.5vw;
+        display: grid;
+        height: 45%;
+        color: $grayish-blue;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        border-top: 1px solid rgba(133, 143, 173, 0.2); //$grayish-blue + opacity
+        grid-template-areas:
+            "benefits       benefits       benefits       benefits"
+            "footer-cta     footer-cta     footer-cta     footer-cta";
+
+        ul {
+            grid-area: benefits;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        ul>li {
+            font-size: 3.2vw;
+            margin-bottom: 2.5vw;
+        }
+
+        ul>li::before {
+            content: url(../images/icon-check.svg);
+            margin-right: .7rem;
+        }
+
+        div:last-child {
+            grid-area: footer-cta;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            button {
+                border: none;
+                font-size: 2.8vw;
+                font-weight: 600;
+                width: 57%;
+                border-radius: 3.33rem;
+                padding: 3.5vw;
+                letter-spacing: 0.033rem;
+                color: $pale-blue;
+                background-color: $dark-desaturated-blue;
+            }
+        }
+    }
+}

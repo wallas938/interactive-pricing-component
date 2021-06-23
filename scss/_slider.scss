@@ -1,0 +1,90 @@
+@import "variables";
+
+@mixin thumb-style {
+    appearance: none;
+    width: $thumbSize;
+    height: $thumbSize;
+    background-image: url(../images/icon-slider.svg);
+    background-color: $strong-cyan;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
+    border-radius: 100%;
+    border: none;
+    box-shadow: 0px 18px 18px 7px $soft-cyan;
+    /* margin-top: calc((($thumbSize - $trackSize) / 2) * -1); */
+    cursor: pointer;
+}
+
+@mixin track-style {
+    height: $trackSize;
+    border-radius: 5px;
+    background-color: $trackBg;
+}
+
+@mixin progress-style {
+    height: $trackSize;
+    background-color: $progressBg;
+    border-radius: 5px;
+}
+
+
+
+/* webkit progress workaround */
+$webkitProgressPercent: 0%;
+
+input[type="range"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: $thumbSize;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+input[type="range"]:focus {
+    outline: none;
+}
+
+/* Thumb */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    @include thumb-style;
+}
+
+input[type="range"]::-moz-range-thumb {
+    -moz-appearance: none;
+    @include thumb-style;
+}
+
+input[type="range"]::-ms-thumb {
+    -ms-appearance: none;
+    @include thumb-style;
+}
+
+/* Track */
+input[type="range"]::-webkit-slider-runnable-track {
+    @include track-style;
+    background-image: linear-gradient(90deg,
+            $progressBg $webkitProgressPercent,
+            $trackBg $webkitProgressPercent);
+    
+}
+
+input[type="range"]::-moz-range-track {
+    @include track-style;
+}
+
+input[type="range"]::-ms-track {
+    @include track-style;
+}
+
+/* Progress */
+input[type="range"]::-moz-range-progress {
+    @include progress-style;
+}
+
+input[type="range"]::-ms-fill-lower {
+    @include progress-style;
+}
