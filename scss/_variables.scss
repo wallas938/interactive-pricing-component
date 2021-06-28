@@ -1,8 +1,11 @@
 @import "colors";
 
 /* Layout */
-$mobile: 375px;
-$desktop: 1440px;
+$mobile-up: 375px;
+$desktop-up: 1440px;
+
+$mobile-down: 374px;
+$desktop-down: 1439px;
 
 
 /* Input Range */

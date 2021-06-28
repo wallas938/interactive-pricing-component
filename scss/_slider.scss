@@ -13,7 +13,7 @@
     border: none;
     box-shadow: 0px 18px 18px 7px $soft-cyan;
     margin-top: calc(((36px - 8px) / 2) * -1);
-    cursor: pointer;
+    cursor: grab;
 }
 
 @mixin track-style {
@@ -69,7 +69,7 @@ input[type="range"]::-webkit-slider-runnable-track {
     background-image: linear-gradient(90deg,
             $progressBg $webkitProgressPercent,
             $trackBg $webkitProgressPercent);
-    
+
 }
 
 input[type="range"]::-moz-range-track {
@@ -87,4 +87,30 @@ input[type="range"]::-moz-range-progress {
 
 input[type="range"]::-ms-fill-lower {
     @include progress-style;
+}
+
+@media screen and (min-width: $desktop-up) {
+
+    /* Thumb */
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        @include thumb-style;
+        width: 2.8vw;
+        height: 2.7vw;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        -moz-appearance: none;
+        @include thumb-style;
+        width: 2.8vw;
+        height: 2.7vw;
+    }
+
+    input[type="range"]::-ms-thumb {
+        -ms-appearance: none;
+        @include thumb-style;
+        width: 2.8vw;
+        height: 2.7vw;
+    }
+    
 }

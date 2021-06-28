@@ -3,23 +3,21 @@
     height: 60vh;
     background-image: url('../images/bg-pattern.svg');
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: cover;
     background-position: center;
     z-index: 0;
     padding: 15vw 6vw 0 6vw;
     text-align: center;
 
     &__pattern-circles {
-        background-image: url("../images/pattern-circles.svg");
-        background-repeat: no-repeat;
-        background-size: auto;
-        background-position: center;
         position: absolute;
         z-index: 1;
-        top: 0;
-        left: 0;
+        top: 7.2vw;
+        left: 50%;
+        transform: translateX(-50%);
         right: 0;
         bottom: 56vw;
+        width: 40vw;
     }
 
     &__text {
@@ -38,6 +36,40 @@
             width: 57%;
             margin: 0 auto;
             color: $grayish-blue;
+        }
+    }
+}
+
+@media screen and (min-width: $desktop-up) {
+    .hero {
+        position: relative;
+        height: 50vh;
+        z-index: 0;
+        padding: 7vw 0 0 0;
+        text-align: center;
+
+        &__pattern-circles {
+            z-index: 1;
+            top: 5vw;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10em;
+        }
+
+        &__text {
+            z-index: 5;
+            position: relative;
+
+            h1 {
+                font-size: 2.2vw;
+                margin-bottom: .5vw;
+            }
+
+            p {
+                font-size: 1.2vw;
+                width: unset;
+                margin: 0 auto;
+            }
         }
     }
 }

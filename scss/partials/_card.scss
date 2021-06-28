@@ -160,3 +160,151 @@
         }
     }
 }
+
+@media screen and (min-width: $desktop-up) {
+    .card {
+        width: 39%;
+        height: 43vh;
+        top: 19vw;
+        bottom: 0;
+
+        &__body {
+            height: 55%;
+            display: grid;
+            padding: 0 3vw;
+            color: $grayish-blue;
+            margin-bottom: 2vw;
+            grid-template-rows: 1fr 1fr .6fr;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-areas:
+                "page-v   page-v   bill     bill"
+                "slider   slider   slider   slider"
+                "body-cta body-cta body-cta body-cta";
+
+            p:first-child {
+                grid-area: page-v;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                text-transform: uppercase;
+                font-size: 1vw;
+                letter-spacing: 1.5px;
+                font-weight: 600;
+                padding-top: 2vw;
+            }
+
+            div.slider {
+                grid-area: slider;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                input {
+                    width: 100%;
+                }
+            }
+
+            p:nth-of-type(2) {
+                grid-area: bill;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                padding-top: 2vw;
+                span:first-child {
+                    font-size: 2.8vw;
+                    margin-right: 0.5vw;
+                }
+
+                span:last-child {
+                    font-size: 1.1vw;
+                }
+            }
+
+            div:last-child {
+                grid-area: body-cta;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                >span:not(span.toggle) {
+                    font-size: .9vw;
+                }
+
+                span.toggle {
+                    width: 2.91vw;
+                    height: 1.527vw;
+
+                    &__circle {
+                        position: absolute;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        left: 10%;
+                        background-color: $white;
+                        width: .9012vw;
+                        height: .9012vw;    
+                        border-radius: 100%;
+                    }
+                }
+
+                >span:not(span:last-child) {
+                    margin-right: 3vw;
+                    margin-right: 11.25px;
+                }
+
+                >span:last-child {
+                    font-size: .8vw !important;
+                    font-weight: 800;
+                    color: $light-red;
+                    padding: unset;
+                    border-radius: 30px;
+                    display: inline-block;
+                    padding: 0vw 0.3vw;
+                    background-color: hsl(16, 79%, 94%);
+                }
+            }
+        }
+
+        &__footer {
+            padding: 0vw 3vw;
+            display: grid;
+            color: $grayish-blue;
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: repeat(4, 1fr);
+            border-top: 2px solid rgba(133, 143, 173, 0.2); //$grayish-blue + opacity
+            grid-template-areas:
+                "benefits     benefits     footer-cta     footer-cta "
+                "benefits     benefits     footer-cta     footer-cta";
+
+            ul {
+                grid-area: benefits;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+            }
+
+            ul>li {
+                font-size: .9vw;
+                margin-bottom: 1vw;
+            }
+
+            ul>li::before {
+                content: url(../images/icon-check.svg);
+                margin-right: .7rem;
+            }
+
+            div:last-child {
+                grid-area: footer-cta;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+
+                button {
+                    font-size: 0.9vw;
+                    width: 12.2vw;
+                    padding: 1vw 0;
+                }
+            }
+        }
+    }
+}
