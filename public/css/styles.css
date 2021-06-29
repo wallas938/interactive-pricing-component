@@ -61,6 +61,14 @@ select:focus {
   }
 }
 
+.toggled {
+  background-color: #a5f3eb !important;
+}
+
+.toggled > #toggle-circle {
+  left: 50%;
+}
+
 /* Colors */
 /* Layout */
 /* Input Range */
@@ -95,11 +103,18 @@ input[type="range"]::-webkit-slider-thumb {
   -webkit-box-shadow: 0px 18px 18px 7px #a5f3eb;
           box-shadow: 0px 18px 18px 7px #a5f3eb;
   margin-top: calc(((36px - 8px) / 2) * -1);
-  cursor: pointer;
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 
 input[type="range"]::-webkit-slider-thumb:hover {
   background-color: #a5f3eb;
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+  background-color: #2c908a;
 }
 
 input[type="range"]::-moz-range-thumb {
@@ -116,11 +131,16 @@ input[type="range"]::-moz-range-thumb {
   border: none;
   box-shadow: 0px 18px 18px 7px #a5f3eb;
   margin-top: calc(((36px - 8px) / 2) * -1);
-  cursor: pointer;
+  cursor: grab;
 }
 
 input[type="range"]::-moz-range-thumb:hover {
   background-color: #a5f3eb;
+}
+
+input[type="range"]::-moz-range-thumb:active {
+  cursor: grabbing;
+  background-color: #2c908a;
 }
 
 input[type="range"]::-ms-thumb {
@@ -137,11 +157,16 @@ input[type="range"]::-ms-thumb {
   border: none;
   box-shadow: 0px 18px 18px 7px #a5f3eb;
   margin-top: calc(((36px - 8px) / 2) * -1);
-  cursor: pointer;
+  cursor: grab;
 }
 
 input[type="range"]::-ms-thumb:hover {
   background-color: #a5f3eb;
+}
+
+input[type="range"]::-ms-thumb:active {
+  cursor: grabbing;
+  background-color: #2c908a;
 }
 
 /* Track */
@@ -178,6 +203,12 @@ input[type="range"]::-ms-fill-lower {
   border-radius: 5px;
 }
 
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  background-color: #a5f3eb;
+  border-radius: 5px;
+}
+
 @media screen and (min-width: 1440px) {
   /* Thumb */
   input[type="range"]::-webkit-slider-thumb {
@@ -195,12 +226,18 @@ input[type="range"]::-ms-fill-lower {
     -webkit-box-shadow: 0px 18px 18px 7px #a5f3eb;
             box-shadow: 0px 18px 18px 7px #a5f3eb;
     margin-top: calc(((36px - 8px) / 2) * -1);
-    cursor: pointer;
+    cursor: -webkit-grab;
+    cursor: grab;
     width: 2.8vw;
     height: 2.7vw;
   }
   input[type="range"]::-webkit-slider-thumb:hover {
     background-color: #a5f3eb;
+  }
+  input[type="range"]::-webkit-slider-thumb:active {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+    background-color: #2c908a;
   }
   input[type="range"]::-moz-range-thumb {
     -moz-appearance: none;
@@ -216,12 +253,16 @@ input[type="range"]::-ms-fill-lower {
     border: none;
     box-shadow: 0px 18px 18px 7px #a5f3eb;
     margin-top: calc(((36px - 8px) / 2) * -1);
-    cursor: pointer;
+    cursor: grab;
     width: 2.8vw;
     height: 2.7vw;
   }
   input[type="range"]::-moz-range-thumb:hover {
     background-color: #a5f3eb;
+  }
+  input[type="range"]::-moz-range-thumb:active {
+    cursor: grabbing;
+    background-color: #2c908a;
   }
   input[type="range"]::-ms-thumb {
     -ms-appearance: none;
@@ -237,12 +278,16 @@ input[type="range"]::-ms-fill-lower {
     border: none;
     box-shadow: 0px 18px 18px 7px #a5f3eb;
     margin-top: calc(((36px - 8px) / 2) * -1);
-    cursor: pointer;
+    cursor: grab;
     width: 2.8vw;
     height: 2.7vw;
   }
   input[type="range"]::-ms-thumb:hover {
     background-color: #a5f3eb;
+  }
+  input[type="range"]::-ms-thumb:active {
+    cursor: grabbing;
+    background-color: #2c908a;
   }
 }
 
@@ -413,6 +458,10 @@ input[type="range"]::-ms-fill-lower {
   margin-right: 2.5vw;
 }
 
+.card__body p:nth-of-type(2) span:first-child > span {
+  font-size: 8vw;
+}
+
 .card__body p:nth-of-type(2) span:last-child {
   font-size: 3.8vw;
 }
@@ -445,7 +494,14 @@ input[type="range"]::-ms-fill-lower {
   border-radius: 30px;
 }
 
+.card__body div:last-child span.toggle:hover {
+  cursor: pointer;
+  background-color: #a5f3eb;
+}
+
 .card__body div:last-child span.toggle__circle {
+  -webkit-transition: left 300ms ease-in-out;
+  transition: left 300ms ease-in-out;
   position: absolute;
   top: 50%;
   -webkit-transform: translateY(-50%);
@@ -618,6 +674,9 @@ input[type="range"]::-ms-fill-lower {
   .card__body p:nth-of-type(2) span:first-child {
     font-size: 2.8vw;
     margin-right: 0.5vw;
+  }
+  .card__body p:nth-of-type(2) span:first-child > span {
+    font-size: 2.8vw;
   }
   .card__body p:nth-of-type(2) span:last-child {
     font-size: 1.1vw;

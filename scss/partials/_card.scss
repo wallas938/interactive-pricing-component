@@ -58,6 +58,10 @@
                 color: black;
                 font-weight: 800;
                 margin-right: 2.5vw;
+
+                > span {
+                    font-size: 8vw;
+                }
             }
 
             span:last-child {
@@ -82,7 +86,13 @@
                 background-color: $lighter-grayish-blue;
                 border-radius: 30px;
 
+                &:hover {
+                    cursor: pointer;
+                    background-color: $soft-cyan;
+                }
+
                 &__circle {
+                    transition: left 300ms ease-in-out;
                     position: absolute;
                     top: 50%;
                     transform: translateY(-50%);
@@ -210,9 +220,14 @@
                 align-items: center;
                 justify-content: flex-end;
                 padding-top: 2vw;
+
                 span:first-child {
                     font-size: 2.8vw;
                     margin-right: 0.5vw;
+
+                    > span {
+                        font-size: 2.8vw;
+                    }
                 }
 
                 span:last-child {
@@ -241,7 +256,7 @@
                         left: 10%;
                         background-color: $white;
                         width: .9012vw;
-                        height: .9012vw;    
+                        height: .9012vw;
                         border-radius: 100%;
                     }
                 }

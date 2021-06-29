@@ -12,6 +12,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="css/styles.css">
+  <script src="scripts/webkitProgressPercent.js"></script>
+  <script src="scripts/scripts.js" defer></script>
   <title>Frontend Mentor | Interactive pricing component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -40,18 +42,18 @@
   </section>
   <section class="card">
     <div class="card__body">
-      <p>100K Pageviews</p>
+      <p><span class="pages"></span></p>
       <div class="slider">
-        <input type="range" name="" id="">
+        <input type="range" name="slider" id="sliderId" step="1" min="1" max="5" value="3">
       </div>
       <p>
-        <span>$16.00</span>
+        <span>$<span class="bill"></span>.00</span>
         <span>/ month</span>
       </p>
       <div>
         <span>Monthly Billing</span>
         <span class="toggle">
-          <span class="toggle__circle"></span>
+          <span id="toggle-circle" class="toggle__circle"></span>
         </span>
         <span>Yearly Billing</span>
         <span>-25% <span class="hide-for-mobile">discount</span></span>

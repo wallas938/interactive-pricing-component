@@ -1,0 +1,6 @@
+.toggled {
+    background-color: $soft-cyan !important;
+    &> #toggle-circle {
+        left: 50%;
+    }
+}
